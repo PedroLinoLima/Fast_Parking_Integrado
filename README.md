@@ -4,7 +4,7 @@
 
 <p align="justify">Projeto Estacionamento Fast Paking  - Neste projeto aplicado pelo professor Fernando Leonid do SENAI Jandira os alunos deveriam criar um sistemas para um estacionamento, o programa deveria cadastrar clientes que iriam fazer uso do local, marcando o nome, placa do veiculo, data e hora de chegada e saída, e por fim gerando comprovantes do horário de chegada e de saída e de pagamento.</p>
 
-![image](https://user-images.githubusercontent.com/77000970/120492092-277ad380-c390-11eb-835c-a5b189683c93.png)
+![image](![image](https://user-images.githubusercontent.com/77000970/124466120-a89d0000-dd6c-11eb-9934-1123b7b23b26.png)
 
 <h2>Autor</h2>
 
