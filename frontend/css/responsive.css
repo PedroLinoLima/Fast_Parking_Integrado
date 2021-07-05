@@ -1,0 +1,137 @@
+/* RESPONSIVIDADE DOS BOTÃOES */
+@media (max-width: 540px) {
+    button {
+        width: 130px;
+        height: 60px;
+        margin: 10px 0px 0px 0px;
+        text-transform: uppercase;
+        font-size: 80%;
+    }
+    #btnPagamento, #btnComprovanteEntrada {
+        width: 90vw !important;
+        font-size: 0.9rem !important;
+    }
+    #modalEscolhaDeComprovante>.modal-content button {
+        margin-left: 20px;
+    }
+    .btnTres button{
+       width: 28vw;
+    }
+    .btnDois button{
+        width: 42vw;
+    }
+}
+
+/* RESPONSIVIDADE DOS MODAIS */
+
+@media (max-width:540px) {
+    .modal-content {
+        width: 100%;
+        height: auto;
+    }
+    .modal-header>h1 {
+        font-size: 1rem;
+    }
+    .input-field {
+        width: 100%;
+    }
+    .formInputMaterializado {
+        display: unset;
+    }
+    .input-container {
+        margin: 10px 20vw 30px 20vw;
+    }
+    .modal {
+        overflow-y: scroll;
+    }
+}
+
+/* RESPONSIVIDADE TABELA COM OS CADASTROS */
+
+@media (max-width:540px) {
+    th {
+        display: none;
+    }
+    tr {
+        margin-left: 25px;
+    }
+    td {
+        width: 150px;
+        border-radius: 25px 25px 0px 0px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+    }
+    #painelCadastro h1, main h1 {
+        font-size: 1.6rem;
+    }
+    main h1 {
+        margin: 0rem 0px 0px 1.9rem;
+    }
+    #tbody td:nth-child(1) {
+        border-radius: 25px 25px 0px 0px;
+    }
+    #tbody td:nth-child(n+2):nth-child(-n+3) {
+        border-radius: 0px;
+    }
+    #tbody td:nth-child(4) {
+        border-radius: 0px 0px 25px 25px;
+        margin-bottom: 3rem;
+    }
+    #tbody td:nth-child(5) {
+        width: 50vw;
+        float: right;
+        margin-top: -272px;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+    #tbody {
+        width: 100vw;
+    }
+    .table {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .table thead, 
+    .table tbody, 
+    .table td, 
+    .table tr {
+        display: block;
+    }
+    .table thead {
+        float: left;
+    }
+    .table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .table tbody {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 900px) {
+
+    #cadastroCliente {
+        border-radius: 25px 25px 0px 0px;
+    }
+    #cadastroCliente>div {
+        padding: 60px 0px 0px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1500px) {
+    #painelCadastro {
+        background-image: url("../imgs/estacionamento1920x1080.jpg");
+    }
+}
+
+@media (min-width: 1700px) {
+    #painelCadastro {
+        background-image: url("../imgs/estacionamento2168X1440.jpg");
+    }
+}

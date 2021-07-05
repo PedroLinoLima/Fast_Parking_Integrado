@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Parking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/logo.jpg">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+    <section id="painelCadastro">
+        <h1>Fast Parking</h1>
+        <section id="cadastroCliente">
+            <h1>Cadastro de cliente</h1>
+            <div>
+                <form class="formCadastro">
+                    <label for="nome">Nome</label>
+                    <input maxlength="17" id="nome" data-index="" type="text" placeholder="Ex .: Pedro Lino de Lima"
+                        required autocomplete="off" />
+                    <label for="placaDoCarro">Placa do carro</label>
+                    <input id="placaDoCarro" pattern="\D{3}-?\d{4}" maxlength="8" placeholder="Ex .: OUT-2210"
+                        type="text" required autocomplete="off"/>
+                </form>
+                <footer>
+                    <button id="btnSalvar" class="btnVerde">Salvar</button>
+                    <button type="button" id="btnPreco" class="btnAmarelo">Preços</button>
+                </footer>
+            </div>
+        </section>
+        
+    </section>
+
+    <!-- MODAL COMPROVANTE DE ENTRADA -->
+    <div class="modal" id="modalComprovanteEntrada">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 class="tituloModal">Imprimir comprovante de entrada</h1>
+                <span class="close-button" id="closeComprovanteEntrada">&#10006;</span>
+            </header>
+
+            <form class="formInputMaterializado">
+                <div class="input-container">
+                    <input id="nomeComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label disabledInput margin-top-input" for="nomeComprovanteEntrada"> Nome</label>
+                </div>
+                <div class="input-container">
+                    <input id="placaComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="placaComprovanteEntrada">Placa do
+                        carro</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovanteEntrada">Data</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovanteEntrada">Hora</label>
+                </div>
+            </form>
+
+            <footer class="modal-footer btnTres">
+                <button type="button" class="btnExcluir" id="cancelarComprovanteEntrada">Apagar registro</button>
+                <button type="submit" class="btnVerde" id="btnImprimirComprovanteEntrada">Imprimir</button>
+                <button type="submit" class="btnAmarelo" id="fecharModal">Fechar</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <main>
+        <ul id="nav">
+            <li><a href="#tbody" id="abaTabelaClientes" class="ativoAba">Controle de Estacionamento</a></li>
+            <li><a href="#tbodyClienteQuePagaram" id="abaRelatorioPagamento">Relatório de pagamento</a></li>
+        </ul>
+        <section id="tabelaClientesQueNaoPagaram" class="animate" data-anime="left">
+            <h1>Controle de Estacionamento</h1>
+            <table class="table" id="tabelaClientes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Placa</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </section>
+        <section id="relatorioPagamento" class="displayNome" data-anime="left">
+            <h1>Relatório de pagamento</h1>
+            <table class="table" id="tabelaClientes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Placa</th>
+                        <th>Data chegada</th>
+                        <th>Data saída</th>
+                        <th>Hora entrada</th>
+                        <th>Hora saída</th>
+                        <th>Valor pago</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyClienteQuePagaram">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- MODAL PREÇO DO ESTACIONAMENTO -->
+    <div class="modal" id="modalPreco">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 class="tituloModal">Preços</h1>
+                <span class="close-button" id="close">&#10006;</span>
+            </header>
+            <form class="formInputMaterializado form" id="form">
+                <div class="input-container">
+                    <input class="input" type="text" required id="umaHoraPreco" autocomplete="off" />
+                    <label class="label  margin-top-input" for="umaHoraPreco">Até 1 hora estacionado</label>
+                </div>
+                <div class="input-container">
+                    <input class="input" type="text" id="precoAteUmaHora" required  autocomplete="off"/>
+                    <label class="label inputSengundoAdiante" for="precoAteUmaHora">Após 1 Hora</label>
+                </div>
+                <br><br><br>
+            </form>
+            <footer class="modal-footer btnDois">
+                <button type="submit" class="btnVerde btnAumentaWidth" id="salvarPreco">Salvar</button>
+                <button type="button" class="btnAmarelo btnAumentaWidth" id="cancelar">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR CADASTRO -->
+    <div class="modal" id="modalEditar">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 class="tituloModal">Editar Dados</h1>
+                <span class="close-button" id="closeEditar">&#10006;</span>
+            </header>
+
+            <form class="formInputMaterializado">
+                <div class="input-container">
+                    <input id="nomeEditar" data-index="" class="input" type="text" required  autocomplete="off"/>
+                    <label class="label margin-top-input" for="nomeEditar">Nome</label>
+                </div>
+                <div class="input-container">
+                    <input id="placaEditar" class="input" pattern="\D{3}-?\d{4}" maxlength="8" type="text" required autocomplete="off" />
+                    <label class="label inputSengundoAdiante" for="placaEditar" >Placa do carro</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataEditar" class="input disabledInput" type="text" required />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataEditar">Data</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaEditar" class="input disabledInput" type="text" required />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaEditar">Hora</label>
+                </div>
+            </form>
+
+            <footer class="modal-footer btnDois">
+                <button type="submit" class="btnVerde btnAumentaWidth" id="btnAtualizarCliente">Salvar alterações</button>
+                <button type="button" class="btnAmarelo" id="cancelarEditarDados">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- MODAL ECOLHA COMPROVANTE -->
+    <div class="modal" id="modalEscolhaDeComprovante">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 class="tituloModal">Comprovante de pagamento ou de entrada </h1>
+                <span class="close-button" id="closeEscolhaComprovante">&#10006;</span>
+            </header>
+            <button type="submit" data-index="" class="btnVerde" id="btnPagamento">COMPROVANTE PARA PAGAMENTO</button>
+            <button type="button" class="btnAmarelo" id="btnComprovanteEntrada">COMPROVANTE DE ENTRADA DO VEÍCULO</button>
+        </div>
+    </div>
+    <!-- MODAL COMPROVANTE, COM PREÇO A SER PAGO -->
+    <div class="modal" id="modalComprovante">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 class="tituloModal">Imprimir comprovante para pagamento</h1>
+                <span class="close-button" id="closeComprovante">&#10006;</span>
+            </header>
+
+            <form class="formInputMaterializado">
+                <div class="input-container">
+                    <input id="nomeComprovante" data-index="" class="input disabledInput" type="text" />
+                    <label class="label disabledInput margin-top-input" for="nomeComprovante"> Nome</label>
+                </div>
+                <div class="input-container">
+                    <input id="placaComprovante" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="placaComprovante">Placa do carro</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataComprovante" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovante">Data de entrada</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataComprovanteSaida" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovanteSaida">Data de saída</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaComprovante" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovante">Hora de entrada</label>
+                </div>
+
+                <div class="input-container">
+                    <input id="horaComprovanteSaida" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovanteSaida">Hora de saída</label>
+                </div>
+                <div class="input-container">
+                    <input id="valorPagar" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="valorPagar">Valor a ser pago</label>
+                </div>
+            </form>
+
+            <footer class="modal-footer btnTres">
+                <button type="submit" class="btnVerde" id="btnPago">Pago</button>
+                <button type="submit" class="btnVerde" id="btnImprimirComprovante">Imprimir</button>
+                <button type="button" class="btnAmarelo" id="cancelarComprovamte">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
